@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: egdh
+    runtime: static
+    buildCommand: node extract-design.js && npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
